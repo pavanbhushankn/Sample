@@ -10,10 +10,10 @@ namespace Sample.WebApi
 
     public static class WebApiConfig
     {
-        public static void Register(HttpConfiguration config, IWindsorContainer container)
+        public static void Register(HttpConfiguration config)
         {
 
-            RegisterControllerActivator(container);
+         //   RegisterControllerActivator(container);
 
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
@@ -36,9 +36,6 @@ namespace Sample.WebApi
 
         }
 
-        private static void RegisterControllerActivator(IWindsorContainer container)
-        {
-            GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpActivator), new WindsorCompositionRoot(container));
-        }
+      
     }
 }
